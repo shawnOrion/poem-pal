@@ -10,7 +10,7 @@ const mm = require("music-metadata");
 
 const { OpenAI } = require("openai");
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_KEY,
 });
 const upload = multer({ dest: "uploads/" }); // Temporary storage
 
