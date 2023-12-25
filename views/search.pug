@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Poem Search
+    link(rel='stylesheet', href='/stylesheets/search.css')
+
+  body
+    header
+      h1 Poem Search
+
+    main
+      input#search-input(type='text' placeholder='Search poems...')
+      div#search-results
+      button.load-more-btn.hidden Load More
+    script(src='/javascripts/search.js')

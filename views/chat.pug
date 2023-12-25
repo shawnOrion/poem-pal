@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/stylesheets/chat.css')
+  body
+    div.loader-wrapper
+      div.loader
+    section.top-section.hidden
+      div#audio-player
+          audio#poem-audio
+            source(src='' type='audio/mpeg')
+          button#play-pause-btn Play
+          input#time-slider(type='range' min='0' max='100' value='0')
+
+      section#poem-section
+      
+        header
+          h1#title-poet #{poem['Title']} - by #{poem['Poet']}
+        
+        div#poem-content!= poem['Poem']
+      
+
+    // Chat Section
+    section#chat-section
+      audio#assistant-audio
+        source(type='audio/mpeg')
+      div#messages
+        // sample messages from user and assistant
+        
+        
+      div#chat-input
+        .message-input-wrapper
+          textarea#message-input
+          div#voice-input 
+            button#start-record-btn Start Recording
+            button#stop-record-btn.hidden Stop Recording
+            button#transcribing-btn.hidden Transcribing...  
+        button#submit-message Send
+     
+
+    script(src='/javascripts/chat.js')
